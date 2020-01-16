@@ -1,0 +1,10 @@
+nav {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1em;
+}
+a {
+	cursor: pointer;
+	margin-left: 2em;
+}
+
