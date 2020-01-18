@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import defaultData from "../data/defaultData";
+import SevenDaysForecast from "./SevenDaysForecast"
+
 
 const {sol_keys} = defaultData;
 
@@ -27,9 +29,10 @@ class MainWeatherSection extends Component {
   }
 
   render() {
+    const {sol} = this.state;
     
-      return (<div className="text-center"> Main Weather Section 
-      
+      return (<div > 
+      <SevenDaysForecast sols = {sol}/>
       </div>);
   }}
 
