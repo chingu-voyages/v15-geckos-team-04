@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import defaultData from "../data/defaultData";
-import ScaleButton from "../components/scaleButton"
 
 const {sol_keys} = defaultData;
 
@@ -30,7 +29,8 @@ class MainWeatherSection extends Component {
   render() {
     
       return (<div className="text-center"> Main Weather Section 
-      <ScaleButton /></div>);
+      
+      </div>);
   }}
 
   export default MainWeatherSection;
