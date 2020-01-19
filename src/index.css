@@ -1,0 +1,15 @@
+.current {
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+}
+.current-data {
+	margin-right: 5em;
+}
+.mars-bg {
+	background-image: url('./img/Mars-bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
