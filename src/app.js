@@ -12,8 +12,8 @@ function App() {
       <div>             
         <Container>
           <MainWeatherSection />
-          <Footer />
           <Mission />
+          <Footer />
         </Container>
       </div>
     );
