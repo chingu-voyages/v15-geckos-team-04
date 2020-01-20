@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 
 function dayForecastTable(props) {
   return (
-    <Table className="col-md-1 m-4" key={props.sol}>
+    <Table className="col-md-1 m-2" key={props.sol}>
       <thead>
         <tr>
           <th colSpan="2"> {props.earthDate} </th>

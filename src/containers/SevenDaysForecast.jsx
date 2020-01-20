@@ -4,6 +4,9 @@ import ForecastTable from "../components/dayForecastTable";
 import { Row } from "react-bootstrap";
 
 function WeatherForecast(props) {
+
+  const sol = props.sol;
+      
   return (
     <div>
       <h3>
@@ -13,9 +16,14 @@ function WeatherForecast(props) {
         </Row>
       </h3>
       <Row>
-                {props.sols.map(item => (
-          <ForecastTable key={item} sol={item} />
-        ))}
+      {props.data.map((item, i) => (
+          <ForecastTable 
+            earthDate = {item.First_UTC.substring(0,10)}
+            minTemperature ={item.AT.mn}
+            maxTemperature ={item.AT.mx}
+            sol= {sol[i]}       
+           />
+        ))}  
       </Row>
     </div>
   );
