@@ -1,5 +1,6 @@
 import React from 'react';
-import Navbar from './Navbar'
+import Navbar from './Navbar';
+import Button from '../components/scaleButton'
 
 const CurrentWeather = (props) =>{
   const Months = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -17,8 +18,8 @@ const CurrentWeather = (props) =>{
           <p>{month} {day}</p>
         </div>
         <div>
-          <p>High: {Math.floor(props.data.AT.mx)} °C</p>
-          <p>Low: {Math.floor(props.data.AT.mn)} °C</p>
+          <p>High: {Math.floor(props.data.AT.mx)}° <Button/></p>
+          <p>Low: {Math.floor(props.data.AT.mn)} ° <Button/></p>
           <p>Pressure: {Math.floor(props.data.PRE.av)} Pa</p>
         </div>
       </div>
