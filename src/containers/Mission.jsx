@@ -18,8 +18,8 @@ function Mission() {
       <Col className = 'col' xs = {10} sm = {9} md = {8} lg = {7} >
         <div className = 'mission_video' >
         <iframe src = 'https://youtube.com/embed/LKLITDmm4NA'
-        allowfullscreen = 'true' 
-        frameborder = '0'
+        allowFullScreen = {true} 
+        frameBorder = '0'
         />
         </div>
       </Col>
