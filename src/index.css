@@ -1,10 +1,6 @@
-nav {
-	display: flex;
-	justify-content: flex-end;
-	margin-top: 1em;
-}
-a {
+.link {
 	cursor: pointer;
 	margin-left: 2em;
+	color: #fff !important;
 }
 

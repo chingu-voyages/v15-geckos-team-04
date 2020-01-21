@@ -1,22 +1,33 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const Navbar = () => {
 	return (
-		<nav>
-			<Link to="weather" smooth={true}>
-				Current Weather
-			</Link>
-			<Link to="forecast" smooth={true}>
-				7-Days Forecast
-			</Link>
-			<Link to="reports" smooth={true}>
-				Weather Reports
-			</Link>
-			<Link to="mission" smooth={true}>
-				InSight Mission
-			</Link>
-		</nav>
+		<Container>
+		<Row className="justify-content-end">
+			<Col md="auto" xs="6">
+				<Link to="weather" smooth={true} className="link">
+					Current Weather
+				</Link>
+			</Col>
+			<Col md="auto" xs="6">
+				<Link to="forecast" smooth={true} className="link">
+					7-Days Forecast
+				</Link>
+			</Col>
+			<Col md="auto" xs="6">
+				<Link to="reports" smooth={true} className="link">
+					Weather Reports
+				</Link>
+			</Col>
+			<Col md="auto" xs="6">
+				<Link to="mission" smooth={true} className="link">
+					InSight Mission
+				</Link>
+			</Col>
+		</Row>
+	</Container>
 	);
 };
 
