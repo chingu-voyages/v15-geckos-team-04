@@ -91,7 +91,8 @@ strong{
 
 .card-header{
   display: flex;
-  justify-content: center;
+  justify-content: center;  
+  background-color: rgba(0,0,0,.3);
 }
 
 .card{
