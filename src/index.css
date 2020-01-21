@@ -1,3 +1,11 @@
+/* Navbar */
+.link {
+	cursor: pointer;
+	margin-left: 2em;
+	color: #fff !important;
+}
+
+/* Current Weather */
 .current {
 	color: #fff;
 	display: flex;
