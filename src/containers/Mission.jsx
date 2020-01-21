@@ -15,7 +15,7 @@ function Mission() {
   return (
     <Container className = 'mission_wrapper'> 
     <Row >
-      <Col className = 'col' xs = {10} sm = {9} md = {8} lg = {7} >
+      <Col className = 'col' xs = {10} sm = {9} md = {8} lg = {10} >
         <div className = 'mission_video' >
         <iframe src = 'https://youtube.com/embed/LKLITDmm4NA'
         allowFullScreen = {true} 
