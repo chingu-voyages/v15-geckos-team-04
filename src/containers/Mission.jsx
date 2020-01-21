@@ -14,40 +14,18 @@ import './Mission.css';
 function Mission() {
   return (
     <Container className = 'mission_wrapper'> 
-    <Row style = {{
-        height: '100vh',
-        width: '100vw',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-      }}>
-      <Col md = {12} lg = {7} style = {{
-        
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'stretch',
-        height: '56.25%',
-        width: '100%',
-      }}>
-        <div className = 'mission_video' 
-        style = {{
-          display: 'flex',
-          justifyContent: 'center',
-          width: '100%'
-        }}
-        >
+    <Row >
+      <Col className = 'col' xs = {10} sm = {9} md = {8} lg = {7} >
+        <div className = 'mission_video' >
         <iframe src = 'https://youtube.com/embed/LKLITDmm4NA'
         allowfullscreen = 'true' 
-        style = {{
-          flexBasis: '100%',
-          width: '100%'
-        }}
+        frameborder = '0'
         />
         </div>
       </Col>
 
-      <Col md = {12} lg = {5}>
-      <div className = 'mission_information' style = {{ width: '100%' }}>
+      <Col className = 'col' xs = {10} sm = {9} md = {9} lg = {5}>
+      <div className = 'mission_information' >
         <Accordion defaultActiveKey = ''>
         <Card>
           <Card.Header>

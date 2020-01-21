@@ -1,16 +1,88 @@
+/*RESET*/
+
+body, html{
+  margin: 0;
+  padding: 0;
+}
+
 .container{
-  padding: 0 !important;
-  margin: 0 !important;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.mission_wrapper{
+  margin: 2em;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh; width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   /*background-image: url(https://images.unsplash.com/photo-1547234935-80c7145ec969?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80);*/
 }
 
 .mission_wrapper::before{
   content: '';
   position: absolute;
-  height: 115%; width: 115%;
+  height: 100%; width: 100%;
   background-image: url(https://images.unsplash.com/photo-1547234935-80c7145ec969?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80);
   background-size: cover;
-  filter: blur(2px) sepia(50%);
+  filter: blur(2px) sepia(70%);
 }
+
+.row{
+  flex: 1 1 auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.col{
+  padding: 0;
+  display: flex;
+  align-items: center;
+  padding: 2em;
+}
+
+.col>div {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col>div>*{
+  flex: 1 1 auto;
+}
+
+
+/*Set up the video to fixed ratio 16/9*/
+
+.mission_video{
+  padding-top: 56.25%;
+  flex: 0 1 auto;
+  align-self: center;
+  position: relative;
+}
+
+iframe{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  max-height: 20em;
+  margin: auto;
+}
+
+/*TYPOGRAPHY*/
+
+strong{
+  color: #bada55;
+}
+
+/*Styling the accordion*/
 
 .card-header{
   display: flex;
@@ -18,7 +90,14 @@
 }
 
 .card{
-  background-color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+}
+
+.btn-light{
+  background-color: rgba(0,0,0,0);
+  border: none;
+  color: white;
 }
 
 .btn-link:hover, .btn-link:visited{
