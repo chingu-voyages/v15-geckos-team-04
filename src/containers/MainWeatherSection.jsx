@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import defaultData from "../data/defaultData";
+import CurrentWeather from './CurrentWeather'
 import SevenDaysForecast from "./SevenDaysForecast"
 
 const {sol_keys} = defaultData;
@@ -17,15 +18,13 @@ class MainWeatherSection extends Component {
  componentDidMount() {}
 
   render() {
-      return (
-        )
       const {defData, sol} = this.state;
 
       return ( 
         <div>
           <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]}/>
           <SevenDaysForecast data = {defData} sol = {sol} />
-        <div/>
+        </div>
       );
   }}
 
