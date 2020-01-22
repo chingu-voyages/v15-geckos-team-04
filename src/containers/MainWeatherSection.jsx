@@ -1,14 +1,30 @@
 import React, { Component } from "react";
+import defaultData from "../data/defaultData";
+import SevenDaysForecast from "./SevenDaysForecast"
+
+const {sol_keys} = defaultData;
+const defData = Object.values(defaultData).filter(i=>i.AT);
 
 class MainWeatherSection extends Component {
   constructor(props) {
     super(props);
-    this.state = { }
+    this.state = {
+      defData: defData,
+      sol: sol_keys}
   };
-
+ 
+  
+ componentDidMount() {}
 
   render() {
-      return (<div className="text-center" >Main Weather Section</div>)
+      const {defData, sol} = this.state;
+
+      return ( 
+      <SevenDaysForecast 
+               data = {defData}
+               sol = {sol}
+            />
+      );
   }}
 
   export default MainWeatherSection;
