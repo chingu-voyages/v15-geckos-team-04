@@ -8,7 +8,9 @@ class MainWeatherSection extends Component {
 
 
   render() {
-      return (<div className="text-center" >Main Weather Section</div>)
+      return (
+        <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]}/>
+        )
   }}
 
   export default MainWeatherSection;
