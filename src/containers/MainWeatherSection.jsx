@@ -27,8 +27,8 @@ class MainWeatherSection extends Component {
     result => {
       this.setState({
         isLoaded: true,
-        defData: Object.values(result).filter(i=>i.AT),
-        sol: result.sol_keys
+        apiData: Object.values(result).filter(i=>i.AT),
+        apiSol: result.sol_keys
       });
       console.log(this.state);
     },
@@ -41,14 +41,24 @@ class MainWeatherSection extends Component {
   );}
 
   render() {
-      const {defData, sol} = this.state;
+      const {defData, sol, error,isLoaded, apiData, apiSol} = this.state;
 
+      if (error) {
+        return (
+        <div> Error: {error.message}
+        <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]}/>
+          <SevenDaysForecast data = {defData} sol = {sol} />
+          </div>)
+      } else if (!isLoaded) {
+        return <div>Loading...</div>;
+      } else {
+        
       return ( 
         <div>
-          <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]}/>
-          <SevenDaysForecast data = {defData} sol = {sol} />
+          <CurrentWeather data={apiData[apiData.length - 1]} sol = {sol[apiSol.length - 1]}/>
+          <SevenDaysForecast data = {apiData} sol = {apiSol} />
         </div>
       );
-  }}
+  }}}
 
   export default MainWeatherSection;
