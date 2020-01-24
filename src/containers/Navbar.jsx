@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Navbar = () => {
 	return (
-		<Container>
+		<Container className="navbar">
 		<Row className="justify-content-end">
 			<Col md="auto" xs="6">
 				<Link to="weather" smooth={true} className="link">
