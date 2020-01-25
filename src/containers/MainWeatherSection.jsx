@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import defaultData from "../data/defaultData";
 import CurrentWeather from './CurrentWeather'
-import SevenDaysForecast from "./SevenDaysForecast"
+import SevenDaysForecast from "./SevenDaysForecast";
+import LoadingSpinner from "../components/loadingSpinner"
 
 const {sol_keys} = defaultData;
 const defData = Object.values(defaultData).filter(i=>i.AT);
@@ -50,7 +51,7 @@ class MainWeatherSection extends Component {
           <SevenDaysForecast data = {defData} sol = {sol} />
           </div>)
       } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <LoadingSpinner />;
       } else {
         
       return ( 

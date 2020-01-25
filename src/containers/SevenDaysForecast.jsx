@@ -15,7 +15,7 @@ function WeatherForecast(props) {
           <ScaleButton />
         </Row>
       </h3>
-      <Row>
+      <Row >
       {props.data.map((item, i) => (
           <ForecastTable 
             earthDate = {item.First_UTC.substring(0,10)}
