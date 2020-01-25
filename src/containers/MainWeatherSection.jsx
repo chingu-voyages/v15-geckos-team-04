@@ -56,7 +56,7 @@ class MainWeatherSection extends Component {
         
       return ( 
         <div>
-          <CurrentWeather data={apiData[apiData.length - 1]} sol = {sol[apiSol.length - 1]}/>
+          <CurrentWeather data={apiData[apiData.length - 1]} sol = {apiSol[apiSol.length - 1]}/>
           <SevenDaysForecast data = {apiData} sol = {apiSol} />
         </div>
       );
