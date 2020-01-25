@@ -11,7 +11,7 @@ function WeatherForecast(props) {
     <div>
       <h3>
         <Row>
-          7- days Weather Forecast,
+          Previous Days Weather,
           <ScaleButton />
         </Row>
       </h3>
@@ -23,7 +23,7 @@ function WeatherForecast(props) {
             maxTemperature ={Math.round(item.AT.mx)}
             sol= {sol[i]}       
            />
-        ))}  
+        )).slice(0,6)}  
       </Row>
     </div>
   );

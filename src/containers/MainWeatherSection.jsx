@@ -5,7 +5,6 @@ import SevenDaysForecast from "./SevenDaysForecast"
 
 const {sol_keys} = defaultData;
 const defData = Object.values(defaultData).filter(i=>i.AT);
-const key = "4eyqnsnfMzgXvo5el4jgj6pKMB9YaJVyiVTssCge";
 
 class MainWeatherSection extends Component {
   constructor(props) {
