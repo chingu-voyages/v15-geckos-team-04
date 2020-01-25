@@ -1,6 +1,8 @@
 /* Navbar */
 .navbar {
 	padding: 1em 2em;
+	position: fixed;
+	z-index: 2;
 }
 .link {
 	cursor: pointer;
