@@ -10,7 +10,7 @@ const CurrentWeather = (props) =>{
   const day = date.getUTCDate();
 
   return(
-    <div className="mars-bg">
+    <div id="weather" className="mars-bg">
       <Navbar />
       <div className="current">
         <div className="current-data">
