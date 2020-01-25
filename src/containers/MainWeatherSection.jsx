@@ -14,13 +14,14 @@ class MainWeatherSection extends Component {
       defData: defData,
       sol: sol_keys,
       isLoaded: false,
-      error: null}
+      error: null
+    }
   };
  
   
  componentDidMount() {
    fetch(
-  "https://api.nasa.gov/insight_weather/?api_key=4eyqnsnfMzgXvo5el4jgj6pKMB9YaJVyiVTssCge&feedtype=json&ver=1.0"
+    process.env.REACT_APP_INSIGHT_MARS_WEATHER_API
 )
   .then(response => response.json())
   .then(
@@ -46,7 +47,7 @@ class MainWeatherSection extends Component {
       if (error) {
         return (
         <div> Error: {error.message}
-        <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]}/>
+          <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]}/>
           <SevenDaysForecast data = {defData} sol = {sol} />
           </div>)
       } else if (!isLoaded) {
