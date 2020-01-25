@@ -19,8 +19,8 @@ function WeatherForecast(props) {
       {props.data.map((item, i) => (
           <ForecastTable 
             earthDate = {item.First_UTC.substring(0,10)}
-            minTemperature ={Math.floor(item.AT.mn)}
-            maxTemperature ={Math.floor(item.AT.mx)}
+            minTemperature ={Math.round(item.AT.mn)}
+            maxTemperature ={Math.round(item.AT.mx)}
             sol= {sol[i]}       
            />
         ))}  
