@@ -21,3 +21,11 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+/* Reports table */
+#reports thead {
+	text-align: center;
+}
+#reports td, #reports th {
+	border-top: none;
+}
