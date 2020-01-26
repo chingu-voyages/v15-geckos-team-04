@@ -4,11 +4,16 @@
 	position: fixed;
 	z-index: 2;
 }
-.link {
+#weather .link {
 	cursor: pointer;
-	color: #fff !important;
+	color: #fff;
 }
-
+#weather .active {
+	color: #bbb;
+}
+#weather .link:hover{
+	color: #bbb;
+}
 /* Current Weather */
 .current {
 	color: #fff;
