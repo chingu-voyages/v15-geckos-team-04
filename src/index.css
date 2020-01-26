@@ -23,9 +23,16 @@
 }
 
 /* Reports table */
-#reports thead {
+#reports  {
 	text-align: center;
 }
 #reports td, #reports th {
 	border-top: none;
 }
+#reports tr:nth-child(1){
+	font-weight: bold;
+}
+#reports td {
+	vertical-align: middle;
+}
+
