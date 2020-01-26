@@ -13,12 +13,12 @@ const ReportsTable = (props)=>{
     console.log(formatedTime)
     return (
         <div id="reports">
-            <Table>
+            <Table responsive>
                 <thead>
                         <tr>
                             <th colSpan="2">Time</th>
                             <th colSpan="3">Temperature</th>
-                            <th colSpan="3">Pressure</th>
+                            <th colSpan="3">Pressure (Pa)</th>
                         </tr>
                 </thead>
                 <tbody>
