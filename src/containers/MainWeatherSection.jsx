@@ -25,7 +25,7 @@ class MainWeatherSection extends Component {
         <div>
           <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]}/>
           <SevenDaysForecast data = {defData} sol = {sol} />
-          <ReportsTable data={defData} sol={sol} />
+          <ReportsTable data={apiData} sol={apiSol} />
         </div>
       );
   }}
