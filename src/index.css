@@ -1,17 +1,17 @@
 /* Navbar */
-.navbar {
+#navbar {
 	padding: 1em 2em;
 	position: fixed;
 	z-index: 2;
 }
-#weather .link {
+#navbar .link {
 	cursor: pointer;
 	color: #fff;
 }
-#weather .active {
+#navbar .active {
 	color: #bbb;
 }
-#weather .link:hover{
+#navbar .link:hover{
 	color: #bbb;
 }
 /* Current Weather */

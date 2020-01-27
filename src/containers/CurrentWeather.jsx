@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './Navbar';
 import Button from '../components/scaleButton'
 
 const CurrentWeather = (props) =>{
