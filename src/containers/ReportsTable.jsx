@@ -1,16 +1,22 @@
 import React from 'react';
 import {Table} from 'react-bootstrap';
+import Row from '../components/reportsRow'
 
 const ReportsTable = (props)=>{
     const Months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
-    const formatedTime = props.data.map(item => {
+    const formatedTime = props.data.reverse().map(item => {
         const date = new Date(item.First_UTC);
         const month = Months[date.getUTCMonth()];
         const day = date.getUTCDate();
         const year = date.getUTCFullYear()
         return `${month} ${day}, ${year}`
     })
-    console.log(formatedTime)
+
+    const sol = props.sol.reverse()
+    const tableRows = props.data.reverse().map((item, index)=>{
+       return <Row key={sol[index]} time={formatedTime[index]} sol={sol[index]} maxTemp={Math.floor(item.AT.mx)} avTemp={Math.floor(item.AT.av)} minTemp={Math.floor(item.AT.mn)} maxPre={Math.floor(item.PRE.mx)} avPre={Math.floor(item.PRE.av)} minPre={Math.floor(item.PRE.mn)}/>
+    })
+    
     return (
         <div id="reports">
             <Table responsive>
@@ -30,18 +36,9 @@ const ReportsTable = (props)=>{
                         <td className="border-right">Minimun</td>
                         <td>Maximum</td>
                         <td>Average</td>
-                        <td>Minimun</td>
+                        <td>Minimum</td>
                     </tr>
-                    <tr>
-                        <td>{formatedTime[0]}</td>
-                        <td className="border-right">{props.sol[0]}</td>
-                        <td>{Math.floor(props.data[0].AT.mx)}</td>
-                        <td>{Math.floor(props.data[0].AT.av)}</td>
-                        <td className="border-right">{Math.floor(props.data[0].AT.mn)}</td>
-                        <td>{Math.floor(props.data[0].PRE.mx)}</td>
-                        <td>{Math.floor(props.data[0].PRE.av)}</td>
-                        <td>{Math.floor(props.data[0].PRE.mn)}</td>
-                    </tr>
+                    {tableRows}
                 </tbody>
             </Table>
         </div>
