@@ -1,6 +1,7 @@
 import React from 'react';
 import {Table} from 'react-bootstrap';
-import Row from '../components/reportsRow'
+import Row from '../components/reportsRow';
+import Button from '../components/scaleButton'
 
 const ReportsTable = (props)=>{
     const Months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
@@ -23,7 +24,7 @@ const ReportsTable = (props)=>{
                 <thead>
                         <tr>
                             <th colSpan="2">Time</th>
-                            <th colSpan="3">Temperature</th>
+                            <th colSpan="3">Temperature <Button/></th>
                             <th colSpan="3">Pressure (Pa)</th>
                         </tr>
                 </thead>
