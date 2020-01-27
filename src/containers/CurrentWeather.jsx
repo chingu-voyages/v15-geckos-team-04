@@ -10,7 +10,6 @@ const CurrentWeather = (props) =>{
 
   return(
     <div id="weather" className="mars-bg">
-      <Navbar />
       <div className="current">
         <div className="current-data">
           <h3>Sol {props.sol}</h3>
