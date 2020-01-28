@@ -35,4 +35,6 @@
 #reports td {
 	vertical-align: middle;
 }
-
+#reports th {
+	vertical-align: baseline;
+}
