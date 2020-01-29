@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './Navbar';
 import Button from '../components/scaleButton'
 
 const CurrentWeather = (props) =>{
@@ -10,8 +9,7 @@ const CurrentWeather = (props) =>{
   const day = date.getUTCDate();
 
   return(
-    <div className="mars-bg">
-      <Navbar />
+    <div id="weather" className="mars-bg">
       <div className="current">
         <div className="current-data">
           <h3>Sol {props.sol}</h3>
