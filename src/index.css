@@ -1,5 +1,15 @@
 @import-normalize; /* bring in normalize.css styles */
 
+/*MAIN LAYOUT DESKTOP*/
+
+#weather, #forecast, #mission {
+	height: 100vh;
+}
+
+#footer {
+	height: 20vh;
+}
+
 /* Navbar */
 #navbar {
 	padding: 1em 2em;
@@ -22,7 +32,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
 }
 .current-data {
 	margin-right: 5em;
