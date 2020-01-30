@@ -8,7 +8,7 @@ function WeatherForecast(props) {
   const sol = props.sol;
       
   return (
-    <div>
+    <div id = 'forecast'>
       <h3>
         <Row>
           7- days Weather Forecast,
