@@ -7,13 +7,29 @@
 //   crossorigin="anonymous"
 // />
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Container, Row, Col, Accordion, Card, Button} from 'react-bootstrap';
 import './Mission.css';
 
 function Mission() {
+
+  // define default background in case the background image doesn't fetch properly
+  //Probably need to be added to the file.
+
+  const defaultBg = `https://images.unsplash.com/photo-1547234935-80c7145ec969?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80`
+  
+  const [bg,setBg] = useState(defaultBg)
+
+  useEffect (() => {
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
+      .then(res => res.json())
+      .then(data => setBg(data.url))
+  },[]);
+
   return (
-    <Container id = 'mission' className = 'mission_wrapper'> 
+    //Pass the background link as data attribute
+    <Container id = 'mission' className = 'mission_wrapper' > 
+    <div className = 'overlay' style = {{backgroundImage: `url(${bg}`}} ></div>
     <Row >
       <Col className = 'col' xs = {10} sm = {9} md = {8} lg = {7} >
         <div className = 'mission_video' >
