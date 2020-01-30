@@ -30,7 +30,7 @@ function Mission() {
     //Pass the background link as data attribute
     <Container id = 'mission' className = 'mission_wrapper' > 
     <div className = 'overlay' style = {{backgroundImage: `url(${bg}`}} ></div>
-    <Row >
+    <Row className = 'row_mission' >
       <Col className = 'col' xs = {10} sm = {9} md = {8} lg = {7} >
         <div className = 'mission_video' >
         <iframe src = 'https://youtube.com/embed/LKLITDmm4NA'

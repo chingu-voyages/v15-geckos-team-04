@@ -31,7 +31,8 @@ body, html{
   filter: blur(0px) sepia(70%);
 }
 
-.row{
+/*this needs to change (className maybe use modules?)*/
+.row_mission{
   flex: 1 1 auto;
   height: 100%;
   display: flex;

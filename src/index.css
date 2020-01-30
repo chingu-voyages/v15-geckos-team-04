@@ -2,6 +2,10 @@
 
 /*MAIN LAYOUT DESKTOP*/
 
+#navbar{
+	height: 10vh;
+}
+
 #weather, #forecast, #mission {
 	height: 100vh;
 }
@@ -10,12 +14,14 @@
 	height: 20vh;
 }
 
-/* Navbar */
+
+/* NAVBAR */
 #navbar {
 	padding: 1em 2em;
 	position: fixed;
-	z-index: 2;
+	background-color: transparent;
 }
+
 #navbar .link {
 	cursor: pointer;
 	color: #fff;
@@ -26,7 +32,15 @@
 #navbar .link:hover{
 	color: #bbb;
 }
-/* Current Weather */
+
+/* CURRENT WEATHER */
+
+#weather{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
 .current {
 	color: #fff;
 	display: flex;
@@ -40,4 +54,21 @@
 	background-image: url('./img/Mars-bg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+
+/*SEVEN DAYS FORECAST*/
+
+#forecast{
+	display: flex;
+	flex-flow: column;
+	align-content: center;
+	justify-content: center;
+	font-family: 'Open Sans'
+}
+
+#forecast .row{
+	display: flex;
+	align-content: center;
+  justify-content: center;
 }
