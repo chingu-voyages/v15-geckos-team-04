@@ -3,6 +3,10 @@ import defaultData from "../data/defaultData";
 import CurrentWeather from "./CurrentWeather";
 import SevenDaysForecast from "./SevenDaysForecast";
 import LoadingSpinner from "../components/loadingSpinner";
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+} from 'recharts';
+
 
 const { sol_keys } = defaultData;
 const defData = Object.values(defaultData).filter(i => i.AT);
@@ -38,7 +42,7 @@ class MainWeatherSection extends Component {
         }
       );
   }
-
+  
   render() {
     const { defData, sol, error, isLoaded, apiData, apiSol } = this.state;
 
@@ -64,6 +68,11 @@ class MainWeatherSection extends Component {
             sol={apiSol[apiSol.length - 1]}
           />
           <SevenDaysForecast data={apiData} sol={apiSol} />
+        
+
+          
+
+
         </div>
       );
     }
@@ -71,3 +80,6 @@ class MainWeatherSection extends Component {
 }
 
 export default MainWeatherSection;
+ 
+
+
