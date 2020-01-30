@@ -1,7 +1,4 @@
-/* Reset */
-.row {
-	margin-right: 0;
-}
+@import-normalize; /* bring in normalize.css styles */
 
 /* Navbar */
 #navbar {
