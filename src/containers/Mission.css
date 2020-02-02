@@ -70,9 +70,9 @@ body, html{
 
 iframe{
   position: absolute;
-  min-height: 102.3%;
+  height: 50.25%;
   width: 100%;
-  top: 0;
+  top: 25%;
   left: 0;
   max-height: 20em;
   margin: auto;
