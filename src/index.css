@@ -19,21 +19,24 @@
 #navbar {
 	padding: 1em 2em;
 	position: fixed;
-	background: transparent;
+	background: rgba(0,0,0,0.5);
 	z-index: 99;
 	transition: background 0.5s ease-in-out;
 }
 
 #navbar.trans{
-	background-color: #000;
+	background-color: rgba(0,0,0,1);
 }
 
 #navbar .link {
 	cursor: pointer;
 	color: #fff;
+	transition: color 1s ease-in-out;
+	
 }
 #navbar .active {
-	color: #bbb;
+	color: #f00;
+	transition: color 1s ease-in-out;
 }
 #navbar .link:hover{
 	color: #bbb;
