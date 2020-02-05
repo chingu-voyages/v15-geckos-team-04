@@ -61,9 +61,8 @@ class MainWeatherSection extends Component {
 
       return ( 
         <div>
-          <Button scale={this.state.isCelsius} onClick={this.handleClick}/>
-          <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]}/>
-          <SevenDaysForecast data = {defData} sol = {sol} />
+          <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]} scale={this.state.isCelsius} onClick={this.handleClick}/>
+          <SevenDaysForecast data = {defData} sol = {sol} scale={this.state.isCelsius} onClick={this.handleClick}/>
         </div>  
       );
   }}
