@@ -16,8 +16,8 @@ const CurrentWeather = (props) =>{
           <p>{month} {day}</p>
         </div>
         <div>
-          <p>High: {Math.floor(props.data.AT.mx)} <Button onClick={props.onClick} scale={props.scale}/></p>
-          <p>Low: {Math.floor(props.data.AT.mn)} <Button onClick={props.onClick} scale={props.scale}/></p>
+          <p>High: {Math.floor(props.data.AT.mx)} <Button variant="outline-light" onClick={props.onClick} scale={props.scale}/></p>
+          <p>Low: {Math.floor(props.data.AT.mn)} <Button variant="outline-light" onClick={props.onClick} scale={props.scale}/></p>
           <p>Pressure: {Math.floor(props.data.PRE.av)} Pa</p>
         </div>
       </div>

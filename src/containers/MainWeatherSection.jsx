@@ -18,40 +18,23 @@ class MainWeatherSection extends Component {
   };
  
   handleClick = () => {
-    console.log('holi')
     this.setState({
         isCelsius: !this.state.isCelsius,
-        defData: this.state.isCelsius ? this.turnCtoF() : this.turnFtoC()
+        defData: this.convertTemp()
     })
   }
 
-  turnCtoF = () => {
+  convertTemp = () => {
     const data = [...this.state.defData]
     data.forEach(sol => {
       for(let key in sol){
         if(key === 'AT'){
           for(let temp in sol[key]){
-           sol[key][temp] = sol[key][temp] * 9 / 5 + 32;
+            this.state.isCelsius ? sol[key][temp] = sol[key][temp] * 9 / 5 + 32 : sol[key][temp] = (sol[key][temp] - 32) * 5 / 9;
           }
         }
       }
     })
-    console.log('conversion celsius to fahrenheit:', data)
-    return data;
-  }
-
-  turnFtoC = () => {
-    const data = [...this.state.defData]
-    data.forEach(sol => {
-      for(let key in sol){
-        if(key === 'AT'){
-          for(let temp in sol[key]){
-           sol[key][temp] = (sol[key][temp] - 32) * 5 / 9;
-          }
-        }
-      }
-    })
-    console.log('conversion fahrenheit to celsius:', data)
     return data;
   }
 
