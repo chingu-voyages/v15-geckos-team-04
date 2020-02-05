@@ -24,7 +24,7 @@ const ReportsTable = (props)=>{
                 <thead>
                         <tr>
                             <th colSpan="2">Time</th>
-                            <th colSpan="3">Temperature <Button/></th>
+                            <th colSpan="3">Temperature <Button onClick={props.onClick} scale={props.scale}/></th>
                             <th colSpan="3">Pressure (Pa)</th>
                         </tr>
                 </thead>

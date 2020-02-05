@@ -14,7 +14,15 @@ class MainWeatherSection extends Component {
       defData: defData,
       sol: sol_keys}
   };
- 
+
+  formatDate = (date) => {
+    const Months = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+    const dateStr = new Date(date);
+    const month = Months[dateStr.getUTCMonth()];
+    const day = dateStr.getUTCDate();
+    return {month, day}
+  }
   
  componentDidMount() {}
 
@@ -25,7 +33,7 @@ class MainWeatherSection extends Component {
         <div>
           <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]}/>
           <SevenDaysForecast data = {defData} sol = {sol} />
-          <ReportsTable data={apiData} sol={apiSol} />
+          <ReportsTable data={apiData} sol={apiSol} scale={this.state.isCelsius} onClick={this.handleClick}/>
         </div>
       );
   }}
