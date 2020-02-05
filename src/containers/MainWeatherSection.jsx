@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import defaultData from "../data/defaultData";
 import CurrentWeather from './CurrentWeather';
 import SevenDaysForecast from "./SevenDaysForecast";
-import Button from '../components/scaleButton'
 
 const {sol_keys} = defaultData;
 const defData = Object.values(defaultData).filter(i=>i.AT);
