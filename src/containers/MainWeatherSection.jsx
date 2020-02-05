@@ -21,19 +21,18 @@ class MainWeatherSection extends Component {
     const dateStr = new Date(date);
     const month = Months[dateStr.getUTCMonth()];
     const day = dateStr.getUTCDate();
-    return {month, day}
+    const year = dateStr.getUTCFullYear();
+    return {month, day, year}
   }
   
- componentDidMount() {}
-
   render() {
       const {defData, sol} = this.state;
 
       return ( 
         <div>
-          <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]}/>
+          <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]} getDate={this.formatDate}/>
           <SevenDaysForecast data = {defData} sol = {sol} />
-          <ReportsTable data={apiData} sol={apiSol} scale={this.state.isCelsius} onClick={this.handleClick}/>
+          <ReportsTable data={defData} sol={sol} scale={this.state.isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
         </div>
       );
   }}

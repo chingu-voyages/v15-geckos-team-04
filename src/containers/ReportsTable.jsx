@@ -4,19 +4,13 @@ import Row from '../components/reportsRow';
 import Button from '../components/scaleButton'
 
 const ReportsTable = (props)=>{
-    const Months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
     const formatedTime = props.data.reverse().map(item => {
-        const date = new Date(item.First_UTC);
-        const month = Months[date.getUTCMonth()];
-        const day = date.getUTCDate();
-        const year = date.getUTCFullYear()
-        return `${month} ${day}, ${year}`
-    })
-
-    const sol = props.sol.reverse()
+        return props.getDate(item.First_UTC)        
+    });
+    const sol = props.sol.reverse();
     const tableRows = props.data.reverse().map((item, index)=>{
        return <Row key={sol[index]} time={formatedTime[index]} sol={sol[index]} maxTemp={Math.floor(item.AT.mx)} avTemp={Math.floor(item.AT.av)} minTemp={Math.floor(item.AT.mn)} maxPre={Math.floor(item.PRE.mx)} avPre={Math.floor(item.PRE.av)} minPre={Math.floor(item.PRE.mn)}/>
-    })
+    });
     
     return (
         <div id="reports">
