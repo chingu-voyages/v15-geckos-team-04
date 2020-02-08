@@ -35,3 +35,6 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+#btn {
+	box-shadow: none;
+}

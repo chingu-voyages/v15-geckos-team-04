@@ -1,12 +1,11 @@
 import React from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
-function scaleButton() {
+const scaleButton = (props)=>{
   return (
-    <ButtonGroup>
-      <Button variant="link">C</Button>
-      <Button variant="link">F</Button>
-    </ButtonGroup>
+    <Button id="btn" variant={props.variant} onClick={props.onClick} >
+      {props.scale ? '°C' : '°F'}
+    </Button>
   );
 }
 
