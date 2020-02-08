@@ -2,8 +2,10 @@ import React from "react";
 import { Table } from "react-bootstrap";
 
 function dayForecastTable(props) {
+
+ 
   return (
-    <Table className="col-md-1 m-2" key={props.sol}>
+    <Table className="col-md m-4 text-center" key={props.sol}>
       <thead>
         <tr>
           <th colSpan="2"> {props.earthDate} </th>
@@ -19,7 +21,7 @@ function dayForecastTable(props) {
           <td>{props.maxTemperature}</td>
         </tr>
         <tr>
-          <td colSpan="2">Sol {props.sol}</td>
+          <td colSpan="2"> Sol {props.sol}</td>
         </tr>
       </tbody>
     </Table>
