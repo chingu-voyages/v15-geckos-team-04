@@ -1,15 +1,17 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import TemperatureChart from "../components/temperatureChart";
 import {Row} from "react-bootstrap";
 
 
 function ReportsChart(props) {
   const data = props.data;
-  const sol = props.sol;
+  const minTemp = props.minTemp;
+  const maxTemp = props.maxTemp;
+
   return (
     <Row>
-      <TemperatureChart data= {data} sol ={sol}/>
-      <TemperatureChart data = {data} sol ={sol}/>
+      <TemperatureChart data= {data} dataKey= {minTemp} id = "minTempChart"/>
+      <TemperatureChart data = {data} dataKey= {maxTemp} id = "maxTempChart"/>
     </Row>
   );
 }

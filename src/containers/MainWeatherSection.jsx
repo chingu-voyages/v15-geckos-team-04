@@ -65,7 +65,7 @@ class MainWeatherSection extends Component {
             sol={apiSol[apiSol.length - 1]}
           />
           <SevenDaysForecast data={apiData} sol={apiSol} />
-          <ReportsChart data={apiData} sol={apiSol} />
+          <ReportsChart data={apiData} minTemp="AT.mn" maxTemp= "AT.mx" />
         </div>
       );
     }

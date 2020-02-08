@@ -10,16 +10,16 @@ import {
 } from "recharts";
 
 
-  const renderCustomAxisTick = ({ x, y, payload }) => {
+  /*const renderCustomAxisTick = ({ x, y, payload }) => {
     let path = [200, 300, 400, 500, 600, 700];
     return (
       path
-    );};
+    );};*/
 
     function temperatureChart(props) {
         const data = props.data;
-        const sol = props.sol;
-       
+        const dataKey = props.dataKey;
+               
   return (
     <LineChart
       width={500}
@@ -33,12 +33,12 @@ import {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis tick={'100', '200','100'}/>
+      <XAxis />
       <YAxis />
       <Tooltip />
       <Legend />
       
-      <Line type="monotone" dataKey="AT.mx" stroke="#82ca9d" />
+      <Line type="monotone" dataKey= {dataKey} stroke="#82ca9d" />
     </LineChart>
   );
 }
