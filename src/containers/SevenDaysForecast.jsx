@@ -12,7 +12,7 @@ function WeatherForecast(props) {
       <h3>
         <Row>
           Previous Days Weather,
-          <ScaleButton />
+          <ScaleButton variant="outline-dark" onClick={props.onClick} scale={props.scale}/>
         </Row>
       </h3>
       <Row >
