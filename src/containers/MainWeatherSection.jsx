@@ -5,6 +5,7 @@ import CurrentWeather from "./CurrentWeather";
 import SevenDaysForecast from "./SevenDaysForecast";
 import LoadingSpinner from "../components/loadingSpinner";
 import ReportsChart from "../containers/ReportsChart";
+import ReportsTable from './ReportsTable'
 
 
 const { sol_keys } = defaultData;
@@ -66,6 +67,16 @@ class MainWeatherSection extends Component {
   );
  }
 
+  formatDate = (date) => {
+    const Months = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+    const dateStr = new Date(date);
+    const month = Months[dateStr.getUTCMonth()];
+    const day = dateStr.getUTCDate();
+    const year = dateStr.getUTCFullYear();
+    return {month, day, year}
+  }
+  
   render() {
     const { defData, sol, error, isLoaded, apiData, apiSol } = this.state;
 
@@ -81,9 +92,12 @@ class MainWeatherSection extends Component {
       } else {
       return ( 
         <div>
-          <CurrentWeather data={apiData[apiData.length - 1]} sol = {apiSol[apiSol.length - 1]} scale={this.state.isCelsius} onClick={this.handleClick}/>
+    
+          <CurrentWeather data={apiData[apiData.length - 1]} sol = {apiSol[apiSol.length - 1]} scale={this.state.isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
           <SevenDaysForecast data = {apiData} sol = {apiSol} scale={this.state.isCelsius} onClick={this.handleClick}/>
           <ReportsChart data={apiData} minTemp="AT.mn" maxTemp= "AT.mx" />
+          <ReportsTable data={apiData} sol={apiSol} scale={this.state.isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
+
         </div>
       );
   }
