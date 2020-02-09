@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
-import defaultData from '../data/defaultData';
-import CurrentWeather from './CurrentWeather'
-import SevenDaysForecast from './SevenDaysForecast';
-import LoadingSpinner from '../components/loadingSpinner';
+
+import React, { Component } from "react";
+import defaultData from "../data/defaultData";
+import CurrentWeather from "./CurrentWeather";
+import SevenDaysForecast from "./SevenDaysForecast";
+import LoadingSpinner from "../components/loadingSpinner";
+import ReportsChart from "../containers/ReportsChart";
 
 
-const {sol_keys} = defaultData;
-const defData = Object.values(defaultData).filter(i=>i.AT);
+const { sol_keys } = defaultData;
+const defData = Object.values(defaultData).filter(i => i.AT);
 
 class MainWeatherSection extends Component {
   constructor(props) {
@@ -65,7 +67,8 @@ class MainWeatherSection extends Component {
  }
 
   render() {
-      const {defData, sol, error,isLoaded, apiData, apiSol} = this.state;
+    const { defData, sol, error, isLoaded, apiData, apiSol } = this.state;
+
 
       if (error) {
         return (
@@ -80,10 +83,12 @@ class MainWeatherSection extends Component {
         <div>
           <CurrentWeather data={apiData[apiData.length - 1]} sol = {apiSol[apiSol.length - 1]} scale={this.state.isCelsius} onClick={this.handleClick}/>
           <SevenDaysForecast data = {apiData} sol = {apiSol} scale={this.state.isCelsius} onClick={this.handleClick}/>
+          <ReportsChart data={apiData} minTemp="AT.mn" maxTemp= "AT.mx" />
         </div>
       );
   }
  }
+
 }
 
-  export default MainWeatherSection;
+export default MainWeatherSection;

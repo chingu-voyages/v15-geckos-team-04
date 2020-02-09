@@ -3,7 +3,9 @@ import Navbar from './containers/Navbar'
 import MainWeatherSection from "./containers/MainWeatherSection";
 import Footer from "./containers/Footer";
 import Mission from './containers/Mission';
-import {Container} from "react-bootstrap";
+import {
+  Container
+} from "react-bootstrap";
 
 
 function App() {
@@ -20,3 +22,4 @@ function App() {
   }
   
   export default App;
+
