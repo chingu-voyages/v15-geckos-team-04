@@ -1,8 +1,8 @@
 
 import React, { Component } from "react";
-import defaultData from "../data/defaultData";
-import CurrentWeather from "./CurrentWeather";
-import SevenDaysForecast from "./SevenDaysForecast";
+import defaultData from "../assets/defaultData";
+import LatestWeather from "./LatestWeather";
+import SixDaysWeather from "./SixDaysWeather";
 import LoadingSpinner from "../components/loadingSpinner";
 import ReportsChart from "../containers/ReportsChart";
 import ReportsTable from './ReportsTable'
@@ -78,14 +78,14 @@ class MainWeatherSection extends Component {
   }
   
   render() {
-    const { defData, sol, error, isLoaded, apiData, apiSol } = this.state;
+    const { defData, sol, error, isLoaded, apiData, apiSol, isCelsius } = this.state;
 
 
       if (error) {
         return (
         <div> Error: {error.message}
-          <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]} scale={this.state.isCelsius} onClick={this.handleClick}/>
-          <SevenDaysForecast data = {defData} sol = {sol} scale={this.state.isCelsius} onClick={this.handleClick}/>
+          <LatestWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]} scale={isCelsius} onClick={this.handleClick}/>
+          <SixDaysWeather data = {defData} sol = {sol} scale={isCelsius} onClick={this.handleClick}/>
         </div>)
       } else if (!isLoaded) {
         return <LoadingSpinner />;
@@ -93,10 +93,10 @@ class MainWeatherSection extends Component {
       return ( 
         <div>
     
-          <CurrentWeather data={apiData[apiData.length - 1]} sol = {apiSol[apiSol.length - 1]} scale={this.state.isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
-          <SevenDaysForecast data = {apiData} sol = {apiSol} scale={this.state.isCelsius} onClick={this.handleClick}/>
+          <LatestWeather data={apiData[apiData.length - 1]} sol = {apiSol[apiSol.length - 1]} scale={this.state.isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
+          <SixDaysWeather data = {apiData} sol = {apiSol} scale={isCelsius} onClick={this.handleClick}/>
           <ReportsChart data={apiData} minTemp="AT.mn" maxTemp= "AT.mx" />
-          <ReportsTable data={apiData} sol={apiSol} scale={this.state.isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
+          <ReportsTable data={apiData} sol={apiSol} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
 
         </div>
       );

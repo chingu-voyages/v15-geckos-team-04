@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
-function dayForecastTable(props) {
+const dayWeatherTable = props => {
 
  
   return (
@@ -28,4 +28,4 @@ function dayForecastTable(props) {
   );
 }
 
-export default dayForecastTable;
+export default dayWeatherTable;

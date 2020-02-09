@@ -7,13 +7,13 @@ const Navbar = () => {
 	<Container id="navbar">
 		<Row className="justify-content-end">
 			<Col md="auto" xs="6">
-				<Link to="weather" spy={true} smooth={true} duration={2000} className="link">
-					Current Weather
+				<Link to="latest-weather" spy={true} smooth={true} duration={2000} className="link">
+					Latest Weather
 				</Link>
 			</Col>
 			<Col md="auto" xs="6">
-				<Link to="forecast"  spy={true} smooth={true} duration={2000} className="link">
-					7-Days Forecast
+				<Link to="six-days-weather"  spy={true} smooth={true} duration={2000} className="link">
+					Last 6 Days Weather
 				</Link>
 			</Col>
 			<Col md="auto" xs="6">
@@ -23,7 +23,7 @@ const Navbar = () => {
 			</Col>
 			<Col md="auto" xs="6">
 				<Link to="mission"  spy={true} smooth={true} duration={2000} className="link">
-					InSight Mission
+					About InSight Mission
 				</Link>
 			</Col>
 		</Row>

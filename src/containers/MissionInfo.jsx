@@ -11,7 +11,7 @@ import React from 'react';
 import {Container, Row, Col, Accordion, Card, Button} from 'react-bootstrap';
 import './Mission.css';
 
-function Mission() {
+const Mission =() => {
   return (
     <Container id = 'mission' className = 'mission_wrapper'> 
     <Row >

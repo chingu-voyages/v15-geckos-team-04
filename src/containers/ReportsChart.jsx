@@ -3,7 +3,7 @@ import TemperatureChart from "../components/temperatureChart";
 import {Row} from "react-bootstrap";
 
 
-function ReportsChart(props) {
+const ReportsChart = props => {
   const data = props.data;
   const minTemp = props.minTemp;
   const maxTemp = props.maxTemp;

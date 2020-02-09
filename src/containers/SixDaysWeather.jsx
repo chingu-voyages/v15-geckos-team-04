@@ -1,26 +1,26 @@
 import React from "react";
 import ScaleButton from "../components/scaleButton";
-import ForecastTable from "../components/dayForecastTable";
+import DayTable from "../components/dayWeatherTable";
 import { Row } from "react-bootstrap";
 
-function WeatherForecast(props) {
+const SixDaysWeather = (props) => {
 
   const sol = props.sol;
       
   return (
-    <div id="forecast">
+    <div id="six-days-weather">
       <h3>
         <Row>
-          Previous Days Weather,
+          Last 6 Days Weather,
           <ScaleButton variant="outline-dark" onClick={props.onClick} scale={props.scale}/>
         </Row>
       </h3>
       <Row >
       {props.data.map((item, i) => (
-          <ForecastTable 
+          <DayTable 
             earthDate = {item.First_UTC.substring(0,10)}
-            minTemperature ={Math.round(item.AT.mn)}
-            maxTemperature ={Math.round(item.AT.mx)}
+            minTemperature ={Math.floor(item.AT.mn)}
+            maxTemperature ={Math.floor(item.AT.mx)}
             sol= {sol[i]}       
            />
         )).slice(0,6)}  
@@ -29,4 +29,4 @@ function WeatherForecast(props) {
   );
 }
 
-export default WeatherForecast;
+export default SixDaysWeather;

@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from '../components/scaleButton';
 
-const CurrentWeather = (props) =>{
+const LatestWeather = (props) =>{
   return(
-    <div id="weather" className="mars-bg">
-      <div className="current">
-        <div className="current-data">
+    <div id="latest-weather" className="mars-bg">
+      <div className="latest">
+        <div className="latest-data">
           <h3>Sol {props.sol}</h3>
           <p className="text-center">{props.getDate(props.data.First_UTC).month} {props.getDate(props.data.First_UTC).day}</p>
         </div>
@@ -19,4 +19,4 @@ const CurrentWeather = (props) =>{
     )
 }
 
-export default CurrentWeather;  
+export default LatestWeather;  

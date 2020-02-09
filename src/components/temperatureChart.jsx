@@ -16,7 +16,7 @@ import {
       path
     );};*/
 
-    function temperatureChart(props) {
+    const  temperatureChart = props => {
         const data = props.data;
         const dataKey = props.dataKey;
                
