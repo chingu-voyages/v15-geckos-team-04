@@ -1,13 +1,12 @@
-import React from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
+import React from 'react';
+import { Button } from 'react-bootstrap';
 
-function scaleButton() {
-  return (
-    <ButtonGroup>
-      <Button variant="link">C</Button>
-      <Button variant="link">F</Button>
-    </ButtonGroup>
-  );
-}
+const scaleButton = props => {
+	return (
+		<Button id="btn" variant={props.variant} onClick={props.onClick}>
+			{props.scale ? '°C' : '°F'}
+		</Button>
+	);
+};
 
 export default scaleButton;

@@ -1,62 +1,46 @@
 @import-normalize; /* bring in normalize.css styles */
 
-/*MAIN LAYOUT DESKTOP*/
-
-#navbar{
+/*Main layout */
+#navbar {
 	height: 10vh;
 }
-
-#weather, #forecast, #mission {
+.latest,
+#mission {
 	height: 100vh;
 }
 
-#footer {
-	height: 20vh;
-}
-
-
-/* NAVBAR */
+/* Navbar */
 #navbar {
 	padding: 1em 2em;
 	position: fixed;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0, 0, 0, 0.5);
 	z-index: 99;
 	transition: background 0.5s ease-in-out;
 }
-
-#navbar.trans{
-	background-color: rgba(0,0,0,1);
+#navbar.trans {
+	background-color: rgba(0, 0, 0, 1);
 }
-
 #navbar .link {
 	cursor: pointer;
 	color: #fff;
 	transition: color 1s ease-in-out;
-	
 }
 #navbar .active {
 	color: #f00;
 	transition: color 1s ease-in-out;
 }
-#navbar .link:hover{
+#navbar .link:hover {
 	color: #bbb;
 }
 
-/* CURRENT WEATHER */
-
-#weather{
-	display: flex;
-	justify-content: center;
-	align-content: center;
-}
-
-.current {
+/* Latest weather */
+.latest {
 	color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.current-data {
+.latest-data {
 	margin-right: 5em;
 }
 .mars-bg {
@@ -65,21 +49,37 @@
 	background-size: cover;
 }
 
-
-/*SEVEN DAYS FORECAST*/
-
-#forecast{
+/*Six days weather*/
+#six-days-weather {
 	display: flex;
 	flex-flow: column;
 	align-content: center;
 	justify-content: center;
+	padding-top: 12vh;
 	/*OPEN SANS JUST FOR TABULAR*/
-	font-family: 'Open Sans'
+	font-family: 'Open Sans';
 }
-
-#forecast .row{
+#six-days-weather .row {
 	display: flex;
 	align-content: center;
-  justify-content: center;
+	justify-content: center;
 }
 
+/* Reports table */
+#reports {
+	padding-top: 12vh;
+	text-align: center;
+}
+#reports td,
+#reports th {
+	border-top: none;
+}
+#reports tr:nth-child(1) {
+	font-weight: bold;
+}
+#reports td {
+	vertical-align: middle;
+}
+#reports th {
+	vertical-align: baseline;
+}
