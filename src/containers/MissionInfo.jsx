@@ -17,17 +17,14 @@ const Mission = () => {
 	  },[]);
 
 	return (
-		<Container id="mission" className="mission_wrapper">
+		<Container id="mission">
 			<div className = 'overlay' style = {{backgroundImage: `url(${bg}`}} ></div>
 			<Row className="row_mission">
-				<Col className="col" xs={10} sm={9} md={8} lg={7}>
-					<div className="mission_video">
-						<iframe src="https://youtube.com/embed/LKLITDmm4NA" allowFullScreen={true} frameBorder="0" />
-					</div>
+				<Col>
+				   <iframe src="https://youtube.com/embed/LKLITDmm4NA" allowFullScreen={true} frameBorder="0" />
 				</Col>
-
-				<Col className="col" xs={10} sm={9} md={9} lg={5}>
-					<div className="mission_information">
+				<Col>
+						<div className = "mission_information">
 						<Accordion defaultActiveKey="">
 							{missionInfo.map(i=>(<AccordionCard key={i} header={i.header} content={i.content}/>))}
 						</Accordion>
