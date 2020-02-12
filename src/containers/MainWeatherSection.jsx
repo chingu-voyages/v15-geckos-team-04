@@ -1,10 +1,10 @@
 
-import React, { Component } from "react";
-import defaultData from "../data/defaultData";
-import CurrentWeather from "./CurrentWeather";
-import SevenDaysForecast from "./SevenDaysForecast";
-import LoadingSpinner from "../components/loadingSpinner";
-import ReportsChart from "../containers/ReportsChart";
+import React, { Component } from 'react';
+import defaultData from '../assets/defaultData';
+import LatestWeather from './LatestWeather';
+import SixDaysWeather from './SixDaysWeather';
+import LoadingSpinner from '../components/loadingSpinner';
+import ReportsChart from '../containers/ReportsChart';
 import ReportsTable from './ReportsTable'
 
 
@@ -15,7 +15,7 @@ class MainWeatherSection extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      defData: defData,
+      data: defData,
       sol: sol_keys,
       isLoaded: false,
       error: null,
@@ -26,12 +26,12 @@ class MainWeatherSection extends Component {
   handleClick = () => {
     this.setState({
         isCelsius: !this.state.isCelsius,
-        defData: this.convertTemp()
+        data: this.convertTemp()
     })
   }
         
   convertTemp = () => {
-    const data = [...this.state.defData]
+    const data = [...this.state.data]
     data.forEach(sol => {
       for(let key in sol){
         if(key === 'AT'){
@@ -53,16 +53,17 @@ class MainWeatherSection extends Component {
     result => {
       this.setState({
         isLoaded: true,
-        apiData: Object.values(result).filter(i=>i.AT),
-        apiSol: result.sol_keys
+        data: Object.values(result).filter(i=>i.AT),
+        sol: result.sol_keys
       });
       console.log(this.state);
     },
     error => {
       this.setState({
         isLoaded: true,
-        error
+        error: error.message
       });
+      console.log(error.message)
     }
   );
  }
@@ -74,35 +75,34 @@ class MainWeatherSection extends Component {
     const month = Months[dateStr.getUTCMonth()];
     const day = dateStr.getUTCDate();
     const year = dateStr.getUTCFullYear();
+    
     return {month, day, year}
   }
   
   render() {
-    const { defData, sol, error, isLoaded, apiData, apiSol } = this.state;
-
+    const { data, sol, error, isLoaded, isCelsius } = this.state;
 
       if (error) {
         return (
-        <div> Error: {error.message}
-          <CurrentWeather data={defData[defData.length - 1]} sol = {sol[sol.length - 1]} scale={this.state.isCelsius} onClick={this.handleClick}/>
-          <SevenDaysForecast data = {defData} sol = {sol} scale={this.state.isCelsius} onClick={this.handleClick}/>
+        <div>
+          <LatestWeather data={data[data.length - 1]} sol = {sol[sol.length - 1]} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate} error={error}/>
+          <SixDaysWeather data = {data} sol = {sol} scale={isCelsius} onClick={this.handleClick}/>
+          <ReportsChart data={data} minTemp="AT.mn" maxTemp= "AT.mx" />
+          <ReportsTable data={data} sol={sol} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
         </div>)
       } else if (!isLoaded) {
         return <LoadingSpinner />;
       } else {
       return ( 
         <div>
-    
-          <CurrentWeather data={apiData[apiData.length - 1]} sol = {apiSol[apiSol.length - 1]} scale={this.state.isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
-          <SevenDaysForecast data = {apiData} sol = {apiSol} scale={this.state.isCelsius} onClick={this.handleClick}/>
-          <ReportsChart data={apiData} minTemp="AT.mn" maxTemp= "AT.mx" />
-          <ReportsTable data={apiData} sol={apiSol} scale={this.state.isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
-
+          <LatestWeather data={data[data.length - 1]} sol = {sol[sol.length - 1]} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
+          <SixDaysWeather data = {data} sol = {sol} scale={isCelsius} onClick={this.handleClick}/>
+          <ReportsChart data={data} minTemp="AT.mn" maxTemp= "AT.mx" />
+          <ReportsTable data={data} sol={sol} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
         </div>
       );
+    }
   }
- }
-
 }
 
 export default MainWeatherSection;

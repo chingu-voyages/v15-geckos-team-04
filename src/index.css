@@ -19,15 +19,15 @@
 #navbar .link:hover{
 	color: #bbb;
 }
-/* Current Weather */
-.current {
+/* Latest Weather */
+.latest {
 	color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 }
-.current-data {
+.latest-data {
 	margin-right: 5em;
 }
 .mars-bg {
