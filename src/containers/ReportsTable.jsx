@@ -26,6 +26,7 @@ const ReportsTable = props => {
 
 	return (
 		<div id="reports">
+			<h3>Daily Weather Report</h3>
 			<Table responsive>
 				<thead>
 					<tr>

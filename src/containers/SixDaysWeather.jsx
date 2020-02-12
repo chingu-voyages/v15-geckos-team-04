@@ -10,8 +10,7 @@ const SixDaysWeather = props => {
 		<div id="six-days-weather">
 			<h3>
 				<Row>
-					Last 6 Days Weather,
-					<ScaleButton variant="outline-dark" onClick={props.onClick} scale={props.scale} />
+					Last 6 Days Weather, <ScaleButton variant="outline-dark" onClick={props.onClick} scale={props.scale} />
 				</Row>
 			</h3>
 			<Row>

@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 
 const dayWeatherTable = props => {
 	return (
-		<Table className="col-md m-4 text-center" key={props.sol}>
+		<Table vartiant="dark" className="col-md m-4 text-center" key={props.sol}>
 			<thead>
 				<tr>
 					<th colSpan="2"> {props.earthDate} </th>
