@@ -1,15 +1,15 @@
 import React from "react";
-import { Card, Accordion } from "react-bootstrap";
+import { Card, Accordion, Button } from "react-bootstrap";
 
 const accordionCard = props => {
   return (
     <Card>
       <Card.Header>
-        <Accordion.Toggle as={Button} variant="light" eventKey="0">
+        <Accordion.Toggle as={Button} variant="light" eventKey={props.key}>
           {props.header}
         </Accordion.Toggle>
       </Card.Header>
-      <Accordion.Collapse eventKey="0">
+      <Accordion.Collapse eventKey={props.key}>
         <Card.Body> {props.content}</Card.Body>
       </Accordion.Collapse>
     </Card>
