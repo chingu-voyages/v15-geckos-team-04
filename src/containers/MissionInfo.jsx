@@ -26,7 +26,7 @@ const Mission = () => {
 				<Col>
 						<div className = "mission_information">
 						<Accordion defaultActiveKey="">
-							{missionInfo.map(i=>(<AccordionCard key={i} header={i.header} content={i.content}/>))}
+							{missionInfo.map(i=>(<AccordionCard key={i} header={i.header.replace(/&quot;/g, '"')} content={i.content.replace(/&quot;/g, '"')}/>))}
 						</Accordion>
 					</div>
 				</Col>
