@@ -16,7 +16,7 @@ const SixDaysWeather = props => {
 			<Row>
 				{props.data
 					.map((item, i) => (
-						<DayTable
+						<DayTable key={sol[i]}
 							earthDate={item.First_UTC.substring(0, 10)}
 							minTemperature={Math.floor(item.AT.mn)}
 							maxTemperature={Math.floor(item.AT.mx)}
