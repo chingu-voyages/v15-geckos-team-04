@@ -1,23 +1,33 @@
 # Mars Weather App
 
-A website displaying the latest weather reports on Mars.
-Includes extra information regarding the NASA mission.
+An app displaying the latest weather reports on Mars. It also includes some information about NASA's InSight mission.
+
+![latest weather section](img/latestSection.png)
 
 This app was made by Geckos Team 4 for the Chingu Collabs Voyage 15.
 
-## Getting Started
+## Demo
 
-** Currently under development! **
+Live version: [https://chingu-voyages.github.io/v15-geckos-team-04/](https://chingu-voyages.github.io/v15-geckos-team-04/)
 
-Visit {add link here} to access the current weather on Mars!
+## Features
+![gif](img/features.gif)
 
-### Installing
+- Main section shows the latest temperature and pressure measeruments on Mars
+- Table displaying maximum and minimum temperature from last six days
+- Reports section shows table with last seven deays weather measurement and two charts displaying maximum and minimum temperature fluctuations
+- Temperature scale changes from Fahrenheit to Celsius and back upon clicking the temperature button
+- Section that gathers some general information about NASA's InSight mission
+
+## Installing
 In order to run this project locally do the following: 
 
 1. Clone the project 
 2. Navigate to project directory with `cd mars-weather-app`
 3. Run `yarn install` or `npm install` to install dependencies 
-4. Run `yarn start` or `npm start` to start the application
+4. Get your API key for the Mars Weather Service API from [here](https://api.nasa.gov/index.html#main-content). Create an .env file an include your apikey with `REACT_APP_INSIGHT_MARS_WEATHER_API="your-apikey"`
+5. Run `yarn start` or `npm start` to start the application
+
 
 ## Built With
 
