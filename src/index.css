@@ -61,6 +61,9 @@ html {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.latest button {
+	margin-left: .7em;
+}
 
 /*Six days weather*/
 #six-days-weather {
