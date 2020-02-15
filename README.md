@@ -1,10 +1,9 @@
 # Mars Weather App
 
-A webapp displaying the current and past weather on the red planet!
+A website displaying the latest weather reports on Mars.
 Includes extra information regarding the NASA mission.
 
-The entire page is built using React.
-This was the group voyage project part of the Chingu program.
+This app was made by Geckos Team 4 for the Chingu Collabs Voyage 15.
 
 ## Getting Started
 
@@ -29,12 +28,7 @@ In order to run this project locally do the following:
 
 ## Contributing
 
-Please read CONTRIBUTING.md {add link here} for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the changelog.
-{add changelog}
+If you want to contribute to this repository, please first discuss the change you wish to make via issue with the owners of this repository before making a change. 
 
 ## Authors
 
