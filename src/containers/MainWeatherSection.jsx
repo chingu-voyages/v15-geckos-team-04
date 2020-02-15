@@ -5,8 +5,7 @@ import LatestWeather from './LatestWeather';
 import SixDaysWeather from './SixDaysWeather';
 import LoadingSpinner from '../components/loadingSpinner';
 import ReportsChart from '../containers/ReportsChart';
-import ReportsTable from './ReportsTable'
-
+import ReportsTable from './ReportsTable';
 
 const { sol_keys } = defaultData;
 const defData = Object.values(defaultData).filter(i => i.AT);
@@ -97,8 +96,8 @@ class MainWeatherSection extends Component {
         <div>
           <LatestWeather data={data[data.length - 1]} sol = {sol[sol.length - 1]} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
           <SixDaysWeather data = {data} sol = {sol} scale={isCelsius} onClick={this.handleClick}/>
-          <ReportsChart data={data} minTemp="AT.mn" maxTemp= "AT.mx" />
           <ReportsTable data={data} sol={sol} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
+          <ReportsChart data={data} minTemp="AT.mn" maxTemp= "AT.mx" />
         </div>
       );
     }
