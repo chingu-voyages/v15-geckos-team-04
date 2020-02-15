@@ -64,6 +64,11 @@ html {
 .latest button {
 	margin-left: .7em;
 }
+.error-msg {
+	color: white;
+	font-size: .7rem;
+	padding: .5em 1em;
+}
 
 /*Six days weather*/
 #six-days-weather {

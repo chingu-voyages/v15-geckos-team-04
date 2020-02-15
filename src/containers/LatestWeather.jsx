@@ -4,7 +4,8 @@ import Button from '../components/scaleButton';
 const LatestWeather = props => {
 	return (
 		<div id="latest-weather" className="mars-bg">
-			<div className="latest">
+			<p className="error-msg">{props.error ? 'Error occurred: default data currently displayed' : ''}</p>
+			<div className="latest">		
 				<div className="latest-data">
 					<h3>Sol {props.sol}</h3>
 					<p className="text-center">
