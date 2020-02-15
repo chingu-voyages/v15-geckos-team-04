@@ -26,7 +26,6 @@ In order to run this project locally do the following:
 * [React-Bootstrap](https://react-bootstrap.github.io/getting-started/introduction) - Front-end framework rebuilt for React
 * [Figma](www.figma.com) - The collaborative interface design tool.
 * [Recharts](http://recharts.org/en-US/) - A composable charting library built on React components
-* [jsonlint](https://jsonlint.com/) - The JSON Validator
 
 ## Contributing
 
