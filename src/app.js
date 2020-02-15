@@ -12,14 +12,12 @@ function App() {
 	});
 
 	return (
-		<div>
 			<Container>
 				<Navbar />
 				<MainWeatherSection />
 				<MissionInfo />
 				<Footer />
 			</Container>
-		</div>
 	);
 }
 

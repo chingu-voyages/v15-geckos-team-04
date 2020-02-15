@@ -8,7 +8,7 @@ const ReportsChart = props => {
 	const maxTemp = props.maxTemp;
 
 	return (
-		<Row>
+		<Row className="justify-content-center mt-4 mb-4">
 			<TemperatureChart data={data} dataKey={minTemp} id="minTempChart" />
 			<TemperatureChart data={data} dataKey={maxTemp} id="maxTempChart" />
 		</Row>
