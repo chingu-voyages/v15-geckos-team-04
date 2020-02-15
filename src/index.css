@@ -1,0 +1,199 @@
+/* @import-normalize;  */
+/* bring in normalize.css styles */
+
+/* Reset */
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	margin: 0;
+	padding: 0;
+	max-width: none;
+}
+.row {
+	margin-right: 0;
+}
+
+/*Main layout */
+.latest,
+#mission {
+	height: 100vh;
+}
+
+/* Navbar */
+#navbar {
+	padding: 1em 2em;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+	transition: background 0.5s ease-in-out;
+}
+#navbar.trans {
+	background-color: rgba(0, 0, 0, 1);
+}
+#navbar .link {
+	cursor: pointer;
+	color: #fff;
+	transition: color 1s ease-in-out;
+}
+#navbar .active {
+	color: #f00;
+	transition: color 1s ease-in-out;
+}
+#navbar .link:hover {
+	color: #bbb;
+}
+
+/* Latest weather */
+.latest {
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.latest-data {
+	margin-right: 5em;
+}
+.mars-bg {
+	background-image: url('./img/Mars-bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.latest button {
+	margin-left: .7em;
+}
+.error-msg {
+	color: white;
+	font-size: .7rem;
+	padding: .5em 1em;
+}
+
+/*Six days weather*/
+#six-days-weather {
+	display: flex;
+	flex-flow: column;
+	align-content: center;
+	justify-content: center;
+	padding-top: 12vh;
+	/*OPEN SANS JUST FOR TABULAR*/
+	font-family: 'Open Sans';
+}
+#six-days-weather .row {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+/* Reports table */
+#reports {
+	padding-top: 12vh;
+	text-align: center;
+}
+#reports td,
+#reports th {
+	border-top: none;
+}
+#reports tr:nth-child(1) {
+	font-weight: bold;
+}
+#reports td {
+	vertical-align: middle;
+}
+#reports th {
+	vertical-align: baseline;
+}
+
+/* Mission info */
+.mission_wrapper {
+	margin: 2em;
+	padding: 0;
+	margin: 0;
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: -1;
+}
+.overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+	background-size: cover;
+	filter: blur(0px) sepia(70%);
+}
+.row_mission {
+	flex: 1 1 auto;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	margin-left: 2em;
+}
+.col {
+	padding: 0;
+	display: flex;
+	align-items: center;
+	padding: 2em;
+}
+.col > div {
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.col > div > * {
+	flex: 1 1 auto;
+}
+
+/* Set up the video to fixed ratio 16/9 */
+.mission_video {
+	margin: auto;
+	padding-top: 50.25%;
+	flex: 0 1 auto;
+	align-self: center;
+}
+iframe {
+	position: absolute;
+	height: 50.25%;
+	width: 100%;
+	top: 25%;
+	left: 0;
+	max-height: 20em;
+	margin: auto;
+	box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Accordion */
+.mission_information {
+	box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
+}
+.card-header {
+	display: flex;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, .3);
+}
+.card {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+.btn-light {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	color: white;
+}
+.btn-link:hover,
+.btn-link:visited {
+	text-decoration: none;
+}
+strong {
+	color: #bada55;
+}
+
+/* Footer */
+#footer {
+	font-size: 0.7rem;
+	padding: 2em;
+}
