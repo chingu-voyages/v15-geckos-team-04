@@ -97,7 +97,7 @@ class MainWeatherSection extends Component {
           <LatestWeather data={data[data.length - 1]} sol = {sol[sol.length - 1]} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
           <SixDaysWeather data={data} sol={sol} scale={isCelsius} onClick={this.handleClick}/>
           <ReportsTable data={data} sol={sol} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
-          <ReportsChart data={data} minTemp="AT.mn" maxTemp= "AT.mx" />
+          <ReportsChart data={data} sol={sol}/>        
         </div>
       );
     }
