@@ -1,20 +1,35 @@
-import React, {useState, useEffect} from 'react';
+import React, {Component} from 'react';
 import { Container, Row, Col, Accordion, Card, Button } from 'react-bootstrap';
-import defaultBg from '../img/mission-bg.jpeg'
+import defaultBg from '../img/mission-bg.jpeg';
 
-const Mission = () => {
-	//  define default background in case the background image doesn't fetch properly
-	const [bg, setBg] = useState(defaultBg);
-	  
-	  useEffect (() => {
-		fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
-		  .then(res => res.json())
-		  .then(data => setBg(data.url))
-	  },[]);
+class Mission extends Component {  
+	constructor(props) {
+		super(props);
+		this.state = {
+		 background: defaultBg
+		}
+	  };
+	
+	  componentDidMount() {
+		fetch(process.env.REACT_APP_INSIGHT_MARS_IMAGE_API)
+	   	.then(res => res.json())
+	   	.then(
+		 data => {
+		   this.setState({
+			 background: data.url
+		   });
+		   console.log(this.state);
+		 },
+		 error => {
+			console.log('unable to fetch image', error.message)
+			console.log(this.state)
+		 }
+	   );
+	  };
 
-	return (
-		<Container id="mission" className="mission_wrapper">
-			<div className = 'overlay' style = {{backgroundImage: `url(${bg}`}} ></div>
+	render() {
+		return (<Container id="mission" className="mission_wrapper">
+			<div className="overlay" style = {{backgroundImage: `url(${this.state.background}`}} ></div>
 			<Row className="row_mission">
 				<Col className="col" xs={10} sm={9} md={8} lg={7}>
 					<div className="mission_video">
@@ -106,8 +121,8 @@ const Mission = () => {
 					</div>
 				</Col>
 			</Row>
-		</Container>
-	);
+		</Container>)
+	};
 };
 
 export default Mission;
