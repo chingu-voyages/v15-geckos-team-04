@@ -2,8 +2,9 @@ import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const temperatureChart = props => {
-	const {data, dataKey} = props;
-	
+	const data = props.data;
+	const dataKey = props.dataKey;
+
 	return (
 		<LineChart
 			width={500}
@@ -17,7 +18,7 @@ const temperatureChart = props => {
 			}}
 		>
 			<CartesianGrid strokeDasharray="3 3" />
-			<XAxis dataKey="name" name="sol" />
+			<XAxis />
 			<YAxis />
 			<Tooltip />
 			<Legend />

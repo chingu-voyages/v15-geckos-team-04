@@ -2,26 +2,24 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 
 const dayWeatherTable = props => {
-const {sol, earthDate, minTemperature, maxTemperature} = props;
-
 	return (
-		<Table className="col-md m-4 text-center" key={sol}>
+		<Table vartiant="dark" className="col-md m-4 text-center" key={props.sol}>
 			<thead>
 				<tr>
-					<th colSpan="2"> {earthDate} </th>
+					<th colSpan="2"> {props.earthDate} </th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<td>MIN</td>
-					<td>{minTemperature}</td>
+					<td>{props.minTemperature}</td>
 				</tr>
 				<tr>
 					<td>MAX</td>
-					<td>{maxTemperature}</td>
+					<td>{props.maxTemperature}</td>
 				</tr>
 				<tr>
-					<td colSpan="2"> Sol {sol}</td>
+					<td colSpan="2"> Sol {props.sol}</td>
 				</tr>
 			</tbody>
 		</Table>
