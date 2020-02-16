@@ -76,8 +76,9 @@ html {
 	flex-flow: column;
 	align-content: center;
 	justify-content: center;
-	padding-top: 6vh;
-	
+	padding-top: 12vh;
+	/*OPEN SANS JUST FOR TABULAR*/
+	font-family: 'Open Sans';
 }
 #six-days-weather .row {
 	display: flex;
@@ -87,7 +88,7 @@ html {
 
 /* Reports table */
 #reports {
-	padding-top: 6vh;
+	padding-top: 12vh;
 	text-align: center;
 }
 #reports td,

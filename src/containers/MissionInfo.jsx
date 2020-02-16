@@ -16,13 +16,13 @@ const Mission = () => {
 		<Container id="mission" className="mission_wrapper">
 			<div className = 'overlay' style = {{backgroundImage: `url(${bg}`}} ></div>
 			<Row className="row_mission">
-				<Col className="col" >
+				<Col className="col" xs={10} sm={9} md={8} lg={7}>
 					<div className="mission_video">
 						<iframe title="inSight video" src="https://youtube.com/embed/LKLITDmm4NA" allowFullScreen={true} frameBorder="0" />
 					</div>
 				</Col>
 
-				<Col className="col" >
+				<Col className="col" xs={10} sm={9} md={9} lg={5}>
 					<div className="mission_information">
 						<Accordion defaultActiveKey="">
 							<Card>
