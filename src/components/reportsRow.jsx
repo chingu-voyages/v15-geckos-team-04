@@ -1,20 +1,21 @@
 import React from 'react';
 
 const Row = props => {
+	const {time, sol, maxTemp, avTemp, minTemp, maxPre, avPre, minPre} = props;
     const formatMonth = name => (name.length > 4 ? `${name.slice(0, 3)}.` : name);
     
 	return (
 		<tr>
 			<td>
-				{formatMonth(props.time.month)} {props.time.day}, {props.time.year}
+				{formatMonth(time.month)} {time.day}, {time.year}
 			</td>
-			<td className="border-right">{props.sol}</td>
-			<td>{props.maxTemp}</td>
-			<td>{props.avTemp}</td>
-			<td className="border-right">{props.minTemp}</td>
-			<td>{props.maxPre}</td>
-			<td>{props.avPre}</td>
-			<td>{props.minPre}</td>
+			<td className="border-right">{sol}</td>
+			<td>{maxTemp}</td>
+			<td>{avTemp}</td>
+			<td className="border-right">{minTemp}</td>
+			<td>{maxPre}</td>
+			<td>{avPre}</td>
+			<td>{minPre}</td>
 		</tr>
 	);
 };
