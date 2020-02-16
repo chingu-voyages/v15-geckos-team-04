@@ -52,6 +52,7 @@ html {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 1.5rem;
 }
 .latest-data {
 	margin-right: 5em;
@@ -77,7 +78,6 @@ html {
 	align-content: center;
 	justify-content: center;
 	padding-top: 6vh;
-	
 }
 #six-days-weather .row {
 	display: flex;
@@ -105,7 +105,7 @@ html {
 }
 
 /* Mission info */
-.mission_wrapper {
+ .mission_wrapper {
 	margin: 2em;
 	padding: 0;
 	margin: 0;
@@ -122,7 +122,6 @@ html {
 	width: 100%;
 	z-index: 0;
 	background-size: cover;
-	filter: blur(0px) sepia(70%);
 }
 .row_mission {
 	flex: 1 1 auto;
@@ -145,7 +144,7 @@ html {
 }
 .col > div > * {
 	flex: 1 1 auto;
-}
+} 
 
 /* Set up the video to fixed ratio 16/9 */
 .mission_video {
