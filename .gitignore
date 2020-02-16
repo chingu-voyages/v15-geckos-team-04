@@ -14,3 +14,4 @@ yarn-error.log*
 
 #environmental variables
 .env
+
