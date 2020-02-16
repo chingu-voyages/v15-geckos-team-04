@@ -23,7 +23,7 @@ const Navbar = () => {
 				</Col>
 				<Col md="auto" xs="6">
 					<Link to="mission" spy={true} smooth={true} duration={2000} className="link">
-						InSight Mission
+						About InSight Mission
 					</Link>
 				</Col>
 			</Row>

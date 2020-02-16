@@ -27,7 +27,7 @@ class MainWeatherSection extends Component {
         isCelsius: !this.state.isCelsius,
         data: this.convertTemp()
     })
-  };
+  }
         
   convertTemp = () => {
     const data = [...this.state.data]
@@ -41,12 +41,12 @@ class MainWeatherSection extends Component {
       }
     })
     return data;
-  };
+  }
         
  componentDidMount() {
    fetch(
     process.env.REACT_APP_INSIGHT_MARS_WEATHER_API
-  )
+)
   .then(response => response.json())
   .then(
     result => {
@@ -65,7 +65,7 @@ class MainWeatherSection extends Component {
       console.log(error.message)
     }
   );
- };
+ }
 
   formatDate = (date) => {
     const Months = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -76,7 +76,7 @@ class MainWeatherSection extends Component {
     const year = dateStr.getUTCFullYear();
     
     return {month, day, year}
-  };
+  }
   
   render() {
     const { data, sol, error, isLoaded, isCelsius } = this.state;
@@ -85,8 +85,8 @@ class MainWeatherSection extends Component {
         return (
         <div>
           <LatestWeather data={data[data.length - 1]} sol = {sol[sol.length - 1]} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate} error={error}/>
-          <SixDaysWeather data={data} sol={sol} scale={isCelsius} onClick={this.handleClick}/>
-          <ReportsChart data={data} sol={sol}/>
+          <SixDaysWeather data = {data} sol = {sol} scale={isCelsius} onClick={this.handleClick}/>
+          <ReportsChart data={data} minTemp="AT.mn" maxTemp= "AT.mx" />
           <ReportsTable data={data} sol={sol} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
         </div>)
       } else if (!isLoaded) {
@@ -95,7 +95,7 @@ class MainWeatherSection extends Component {
       return ( 
         <div>
           <LatestWeather data={data[data.length - 1]} sol = {sol[sol.length - 1]} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
-          <SixDaysWeather data={data} sol={sol} scale={isCelsius} onClick={this.handleClick}/>
+          <SixDaysWeather data = {data} sol = {sol} scale={isCelsius} onClick={this.handleClick}/>
           <ReportsTable data={data} sol={sol} scale={isCelsius} onClick={this.handleClick} getDate={this.formatDate}/>
           <ReportsChart data={data} minTemp="AT.mn" maxTemp= "AT.mx" />
         </div>
