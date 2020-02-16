@@ -4,18 +4,19 @@ import DayTable from '../components/dayWeatherTable';
 import { Row } from 'react-bootstrap';
 
 const SixDaysWeather = props => {
-	const sol = props.sol;
+	const {sol, onClick, scale, data} = props;
+	
 
 	return (
 		<div id="six-days-weather">
 			<h3>
 				<Row>
 					<span className="mr-2">Last 6 Days Weather,</span>
-					<ScaleButton variant="outline-dark" onClick={props.onClick} scale={props.scale} />
+					<ScaleButton variant="outline-dark" onClick={onClick} scale={scale} />
 				</Row>
 			</h3>
 			<Row>
-				{props.data
+				{data
 					.map((item, i) => (
 						<DayTable
 							key={sol[i]}
